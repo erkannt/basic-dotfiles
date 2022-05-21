@@ -1,0 +1,43 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customized to my needs...
+#
+# MISC
+unalias ls
+alias ll="ls -lha"
+
+# DOCKER
+export DOCKER_BUILDKIT=1
+
+# CHEZMOI
+alias cm='chezmoi'
+alias cms='chezmoi status'
+alias cmgst='cm git status'
+alias cmgcm='cm git commit'
+alias cmgps='cm git push'
+
+# GIT
+alias gst='git status'
+alias gcm='git commit -m'
+alias gpl='git pull'
+alias gps='git push'
+alias gfb='git fetch && git rebase'
+alias gco='git checkout'
+alias gap='git add --patch'
+
+# DEFAULT EDITOR
+export EDITOR="vim"
+export VISUAL="vim"
+
+# PATH
+export PATH=$PATH:$HOME/.bin
